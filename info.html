@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <!--
+      Registration Form
+      Author: Nikki Collins
+      Date:  2/9/21
+
+      Filename: info.html
+     -->
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap" rel="stylesheet">
+  <title>Registration Form</title>
+
+</head>
+
+<body>
+
+  <nav>
+    <div class="sidenav">
+      <a href="index.html">Home</a>
+      <a href="classes.html">Classes Offered</a>
+      <a href="info.html">Information</a>
+    </div>
+  </nav>
+  <div class="main">
+    <div class="container">
+      <!--links to the thankyou.html java script page when submitted-->
+      <form method="get" action="thankyou.html">
+        <h2>Send Us information about you!</h2>
+        <fieldset>
+          <legend>Contact Information</legend>
+          <!--this adds text fields to be filled out and makes them required with the word 'required'-->
+          <label class="cinfo" for="fname">
+            Name:
+            <input class="cinfo" autofocus type="text" name="cinfo" id="fname" required placeholder="First Name" />
+          </label>
+          <label class="cinfo" for="lname">
+            Last Name:
+            <input class="cinfo" type="text" name="cinfo" id="lname" required placeholder="Last Name" />
+          </label>
+          <label class="cinfo" for="tel">
+            Phone number:
+            <input class="cinfo" type="tel" name="cinfo" id="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required placeholder="417-123-4567" />
+          </label>
+          <label class="cinfo" for="email">
+            Email:
+            <input class="cinfo" type="email" name="cinfo" id="email" required placeholder="Email" />
+          </label>
+          <p>Other:</p>
+          <textarea id="textbox" name="textbox" rows="1" cols="40" placeholder="other contact information"></textarea>
+          Please choose the best contact method:
+          <select id="choice" name="choice" required>
+            <option value="">Contact Choice</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="other">Other</option>
+          </select>
+        </fieldset>
+
+        <fieldset>
+          <legend>Classes Types</legend>
+          <table class="infotable">
+            <tr>
+              <td class="infotable" colspan=4>
+                Please pick one or more of the classes below that intrest you:
+              </td>
+            </tr>
+            <tr>
+              <td class="infotable">
+                <input type="checkbox" name="cross_training" id="box1" onclick="myFunction()">
+                Cross Training
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="sprint" id="box2" onclick="myFunction()">
+                Sprint
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="spin" id="box3" onclick="myFunction()">
+                Spin
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="bodypump" id="box4" onclick="myFunction()">
+                BodyPump
+              </td>
+            </tr>
+            <tr>
+              <td class="infotable">
+                <input type="checkbox" name="bodycombat" id="box5" onclick="myFunction()">
+                BodyCombat
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="step_interval" id="box6" onclick="myFunction()">
+                Step Interval
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="advanced_cross_training" id="box7" onclick="myFunction()">
+                Advanced Cross Training
+              </td>
+              <td class="infotable">
+                <input type="checkbox" name="zumba" id="box8" onclick="myFunction()">
+                Zumba
+              </td>
+            </tr>
+          </table>
+          <!--radio buttons am/pm - must give them the same name to make them toggle so one is required-->
+          <div class="radio">
+            <p>Would you like an AM class or a PM class? Please pick 1:</p>
+            <input type="radio" id="am" name="time" value="Am" required>
+            <label for="am">Am</label>
+            <input type="radio" id="pm" name="time" value="Pm">
+            <label for="pm">Pm</label>
+          </div>
+        </fieldset>
+        <fieldset>
+          <!--the text box shows 4 'rows' high and 50 'columns' wide. it is required and the place holder adds they grey text before you type.
+            the <textarea></textarea> must be together (not on seperate lines) to keep away extra spaces that hide the placeholder-->
+          <legend>Additional Info</legend>
+          <p>What are you hoping to gain from this experience and how can we best facilitate your needs?</p>
+          <textarea id="additonaltextbox" name="additionaltextbox" rows="4" cols="50" required placeholder="Please go as detailed as you feel comfortable..."></textarea>
+
+        </fieldset>
+        <!--stinkin submit button that likes to hide outside the form causing me headaches when testing my form.-->
+        <div class="submitdiv">
+          <input class="submit" type="submit" value="Submit" />
+        </div>
+      </form>
+
+    </div>
+    <footer>Created By: Nikki Collins | Date Updated: 02/10/2021 | copyright ©2021</footer>
+  </div>
+</body>
+
+</html>
